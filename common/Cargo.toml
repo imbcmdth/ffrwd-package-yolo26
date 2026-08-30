@@ -1,0 +1,9 @@
+[package]
+name = "yolo26-common"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "yolo26_common"
+
+[dependencies]

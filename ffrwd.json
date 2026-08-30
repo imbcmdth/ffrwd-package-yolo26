@@ -1,0 +1,52 @@
+{
+  "name": "ffrwd/yolo26",
+  "version": "1.0.1",
+  "description": "YOLO26 detection and segmentation, hosted in wasm: one model family, one record shape, and utilities that turn its rows into mattes or drawn overlays. Everything downstream is native ffmpeg. The weights are Ultralytics' (AGPL-3.0), fetched at install.",
+  "license": "AGPL-3.0",
+  "capabilities": [
+    "nn"
+  ],
+  "dependencies": {
+    "ffrwd/wasm": "0.10.0",
+    "ffrwd/mask_tools": "1.0.0"
+  },
+  "keywords": [
+    "yolo26",
+    "detection",
+    "segmentation",
+    "mask",
+    "matte",
+    "blur",
+    "mosaic",
+    "privacy",
+    "nn"
+  ],
+  "lib": {
+    "detect": "src/model.sql",
+    "segment_mask": "src/model.sql",
+    "boxes_mask": "src/boxes.sql",
+    "draw_boxes": "src/boxes.sql"
+  },
+  "bin": {
+    "blur-people": "recipes/blur-people.sql",
+    "mosaic-people": "recipes/mosaic-people.sql",
+    "spotlight": "recipes/spotlight.sql",
+    "replace-background": "recipes/replace-background.sql",
+    "draw": "recipes/draw.sql",
+    "detections": "recipes/detections.sql"
+  },
+  "models": {
+    "detect": {
+      "repo": "imbcmdth/yolo26-onnx",
+      "revision": "32481c152c04ab78a1aec68a7736e53dce5a574e",
+      "file": "yolo26m.onnx",
+      "sha256": "17d9d4491c8954d69ce95bc8f707d883cae4a1b6508ee9f4dca8e0b38b1addc9"
+    },
+    "segment_mask": {
+      "repo": "imbcmdth/yolo26-onnx",
+      "revision": "32481c152c04ab78a1aec68a7736e53dce5a574e",
+      "file": "yolo26m-seg.onnx",
+      "sha256": "4add95cf47b737ba6ad6db84d524cbd6b34cba1c0f08bb5a71f2c2bcde23a900"
+    }
+  }
+}

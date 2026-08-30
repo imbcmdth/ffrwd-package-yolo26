@@ -1,0 +1,23 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-wasip2
+      - uses: Swatinem/rust-cache@v2
+      - name: Install ffrwd and the wit package
+        run: |
+          pip install ffrwd
+          ffrwd install -g ffrwd/wasm
+      - name: Build the modules
+        run: cargo build --target wasm32-wasip2 --release

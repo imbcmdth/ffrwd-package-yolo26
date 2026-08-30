@@ -1,0 +1,7 @@
+# wasm32-wasip2 leaves SIMD off by default; enable it so a module can use it.
+[target.wasm32-wasip2]
+rustflags = ["-C", "target-feature=+simd128"]
+
+# The wit comes from the installed ffrwd/wasm package: each module's
+# build.rs asks `ffrwd path ffrwd/wasm` for it, so run
+# `ffrwd install -g ffrwd/wasm` once before building.
