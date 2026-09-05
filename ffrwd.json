@@ -1,6 +1,6 @@
 {
   "name": "ffrwd/yolo26",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "YOLO26 detection and segmentation, hosted in wasm: one model family, one record shape, and utilities that turn its rows into mattes or drawn overlays. Everything downstream is native ffmpeg. The weights are Ultralytics' (AGPL-3.0), fetched at install.",
   "license": "AGPL-3.0",
   "homepage": "https://github.com/imbcmdth/ffrwd-package-yolo26",

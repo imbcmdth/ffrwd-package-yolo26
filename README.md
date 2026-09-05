@@ -13,6 +13,14 @@ the models over a network in a commercial product needs [Ultralytics'
 commercial license](https://www.ultralytics.com/license); nothing here
 changes that.
 
+If that license is in your way, use
+[`ffrwd/rfdetr`](https://github.com/imbcmdth/ffrwd-package-rfdetr)
+instead: the same exports, utilities and recipes over Roboflow's
+RF-DETR, whose weights are Apache-2.0, so a query swaps the package
+name and nothing else moves. On the footage the two were compared on,
+its mattes agree with this package's at 0.95 IoU and it runs at about
+half the frame rate.
+
 The weights are not in the archive: the manifest pins them - exact
 repo, revision, file and sha256 - and `ffrwd install` fetches and
 verifies them. Both are the medium end-to-end (NMS-free) ONNX exports
